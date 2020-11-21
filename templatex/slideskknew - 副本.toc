@@ -1,0 +1,15 @@
+\pdcontentsline{1}{2}{Introduction}
+\pdcontentsline{0}{3}{Project Introduction}
+\pdcontentsline{1}{4}{Import Data Set}
+\pdcontentsline{0}{5}{Preprocessing Of Project Data Sets}
+\pdcontentsline{0}{6}{Preprocessing Of Project Data Sets}
+\pdcontentsline{1}{7}{Build A Corpus}
+\pdcontentsline{0}{9}{Import The Stop Lexicon}
+\pdcontentsline{1}{10}{Characteristics Of The Engineering}
+\pdcontentsline{0}{11}{Build The Model}
+\pdcontentsline{0}{12}{Bag-of-words Model}
+\pdcontentsline{0}{13}{TF-IDF Model}
+\pdcontentsline{1}{14}{Construct The Classifier Algorithm}
+\pdcontentsline{0}{15}{Classifier Algorithm}
+\pdcontentsline{1}{16}{Predict Test Set Data}
+\pdcontentsline{0}{17}{Predict Test Set Data}

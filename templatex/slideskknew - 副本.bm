@@ -1,0 +1,15 @@
+\pdbookmark{sec.1}{}{2}{Introduction}
+\pdbookmark{sec.1.slide}{sec.1}{3}{Project Introduction}
+\pdbookmark{sec.2}{}{4}{Import Data Set}
+\pdbookmark{sec.2.slide}{sec.2}{5}{Preprocessing Of Project Data Sets}
+\pdbookmark{sec.2.slide}{sec.2}{6}{Preprocessing Of Project Data Sets}
+\pdbookmark{sec.3}{}{7}{Build A Corpus}
+\pdbookmark{sec.3.slide}{sec.3}{9}{Import The Stop Lexicon}
+\pdbookmark{sec.4}{}{10}{Characteristics Of The Engineering}
+\pdbookmark{sec.4.slide}{sec.4}{11}{Build The Model}
+\pdbookmark{sec.4.slide}{sec.4}{12}{Bag-of-words Model}
+\pdbookmark{sec.4.slide}{sec.4}{13}{TF-IDF Model}
+\pdbookmark{sec.5}{}{14}{Construct The Classifier Algorithm}
+\pdbookmark{sec.5.slide}{sec.5}{15}{Classifier Algorithm}
+\pdbookmark{sec.6}{}{16}{Predict Test Set Data}
+\pdbookmark{sec.6.slide}{sec.6}{17}{Predict Test Set Data}

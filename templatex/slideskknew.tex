@@ -1,0 +1,742 @@
+%
+% ---------------------------------------------------------------
+% Copyright (C) 2012-2018 Gang Li
+% ---------------------------------------------------------------
+%
+% This work is the default powerdot-tuliplab style test file and may be
+% distributed and/or modified under the conditions of the LaTeX Project Public
+% License, either version 1.3 of this license or (at your option) any later
+% version. The latest version of this license is in
+% http://www.latex-project.org/lppl.txt and version 1.3 or later is part of all
+% distributions of LaTeX version 2003/12/01 or later.
+%
+% This work has the LPPL maintenance status "maintained".
+%
+% This Current Maintainer of this work is Gang Li.
+%
+%
+
+\documentclass[
+ size=14pt,
+ paper=smartboard,  %a4paper, smartboard, screen
+ mode=present, 		%present, handout, print
+ display=slides, 	% slidesnotes, notes, slides
+ style=tuliplab,  	% TULIP Lab style
+ pauseslide,
+ fleqn,leqno]{powerdot}
+
+
+\usepackage{cancel}
+\usepackage{caption}
+\usepackage{stackengine}
+\usepackage{smartdiagram}
+\usepackage{attrib}
+\usepackage{amssymb}
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{mathtools}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{boxedminipage}
+\usepackage{rotate}
+\usepackage{calc}
+\usepackage[absolute]{textpos}
+\usepackage{psfrag,overpic}
+\usepackage{fouriernc}
+\usepackage{pstricks,pst-3d,pst-grad,pstricks-add,pst-text,pst-node,pst-tree}
+\usepackage{moreverb,epsfig,subfigure}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{etex}
+\usepackage{breqn}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{gitinfo2}
+\usepackage{siunitx}
+\usepackage{nicefrac}
+%\usepackage{geometry}
+%\geometry{verbose,letterpaper}
+\usepackage{media9}
+\usepackage{animate}
+%\usepackage{movie15}
+\usepackage{auto-pst-pdf}
+
+\usepackage{breakurl}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage{multicol}
+
+
+
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage{dtk-logos}
+\usepackage{tikz}
+\usepackage{adigraph}
+%\usepackage{tkz-graph}
+\usepackage{hyperref}
+%\usepackage{ulem}
+\usepackage{pgfplots}
+\usepackage{verbatim}
+\usepackage{fontawesome}
+
+
+\usepackage{todonotes}
+% \usepackage{pst-rel-points}
+\usepackage{animate}
+\usepackage{fontawesome}
+
+\usepackage{listings}
+\lstset{frameround=fttt,
+frame=trBL,
+stringstyle=\ttfamily,
+backgroundcolor=\color{yellow!20},
+basicstyle=\footnotesize\ttfamily}
+\lstnewenvironment{code}{
+\lstset{frame=single,escapeinside=`',
+backgroundcolor=\color{yellow!20},
+basicstyle=\footnotesize\ttfamily}
+}{}
+
+
+\usepackage{hyperref}
+\hypersetup{ % TODO: PDF meta Data
+  pdftitle={Presentation Title},
+  pdfauthor={Gang Li},
+  pdfpagemode={FullScreen},
+  pdfborder={0 0 0}
+}
+
+
+% \usepackage{auto-pst-pdf}
+% package to show source code
+
+\definecolor{LightGray}{rgb}{0.9,0.9,0.9}
+\newlength{\pixel}\setlength\pixel{0.000714285714\slidewidth}
+\setlength{\TPHorizModule}{\slidewidth}
+\setlength{\TPVertModule}{\slideheight}
+\newcommand\highlight[1]{\fbox{#1}}
+\newcommand\icite[1]{{\footnotesize [#1]}}
+
+\newcommand\twotonebox[2]{\fcolorbox{pdcolor2}{pdcolor2}
+{#1\vphantom{#2}}\fcolorbox{pdcolor2}{white}{#2\vphantom{#1}}}
+\newcommand\twotoneboxo[2]{\fcolorbox{pdcolor2}{pdcolor2}
+{#1}\fcolorbox{pdcolor2}{white}{#2}}
+\newcommand\vpspace[1]{\vphantom{\vspace{#1}}}
+\newcommand\hpspace[1]{\hphantom{\hspace{#1}}}
+\newcommand\COMMENT[1]{}
+
+\newcommand\placepos[3]{\hbox to\z@{\kern#1
+        \raisebox{-#2}[\z@][\z@]{#3}\hss}\ignorespaces}
+
+\renewcommand{\baselinestretch}{1.2}
+
+
+\newcommand{\draftnote}[3]{
+	\todo[author=#2,color=#1!30,size=\footnotesize]{\textsf{#3}}	}
+% TODO: add yourself here:
+%
+\newcommand{\gangli}[1]{\draftnote{blue}{GLi:}{#1}}
+\newcommand{\shaoni}[1]{\draftnote{green}{sn:}{#1}}
+\newcommand{\gliMarker}
+	{\todo[author=GLi,size=\tiny,inline,color=blue!40]
+	{Gang Li has worked up to here.}}
+\newcommand{\snMarker}
+	{\todo[author=Sn,size=\tiny,inline,color=green!40]
+	{Shaoni has worked up to here.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% title
+% TODO: Customize to your Own Title, Name, Address
+%
+\title{Predict Future Sales}
+\author{
+MingZhu Kang 
+\\
+\\Xi'an Shiyou University
+%\\Deakin University
+\\Chinese Academy of Sciences
+%\\ \today
+}
+%\date{\gitCommitterDate}
+
+
+% Customize the setting of slides
+\pdsetup{
+% TODO: Customize the left footer, and right footer
+rf=\href{http://www.tulip.org.au}{
+Last Changed by: \textsc{\gitCommitterName}\ (\gitAuthorDate)
+%Last Changed by: \textsc{\gitCommitterName}\ \gitVtagn-\gitAbbrevHash\ (\gitAuthorDate)
+},
+cf={Predict Future Sales},
+}
+
+
+\begin{document}
+
+\maketitle
+
+%\begin{slide}{Overview}
+%\tableofcontents[content=sections]
+%\end{slide}
+
+
+%%==========================================================================================
+%%
+% \begin{slide}[toc=,bm=]{Overview}
+% \tableofcontents[content=currentsection,type=1]
+% \end{slide}
+%%
+%%==========================================================================================
+
+
+\section{Introduction}
+
+
+%%==========================================================================================
+%%
+\begin{slide}{Project  Introduction}
+\begin{center}
+\twotonebox{\rotatebox{95}{Defn}}{\parbox{.89\textwidth}
+{
+\begin{itemize}
+\item Project Introduction
+\\Analyze the company's operating status, 
+ find out the relevant factors affecting the sales volume of goods, 
+ Taking the historical sales data set of convenience stores as the object of study, 
+ the data were preprocessed and feature extracted, 
+ and the model was used to train the data set 
+ to predict the sales volume of different goods in each store of the company in the next month.
+\end{itemize}
+}}
+
+\end{center}
+\bigskip
+\begin{center}
+\begin{tabular}{c| c c c c }
+\toprule
+\midrule
+
+\bottomrule
+\end{tabular}
+\end{center}
+\bigskip
+
+%%==========================================================================================
+\begin{note}
+First, I will introduce the problem definition.
+In the real life,
+a teacher may be interested in the characteristics that
+make one student obvious different from others.
+Or,
+NBA sports coaches would prefer to
+know the advantages and disadvantages of one player.
+Here, the player can be regarded as a query object.
+
+For example, team A has five players,
+each player has four features.
+The NBA sports coaches may want to know the features of
+player $1$ that are different from others.
+
+The above example can be seen as outlying aspects mining.
+The main purpose of outlying aspects mining is to identify
+the outstanding features of the query object.
+\end{note}
+%%==========================================================================================
+
+\end{slide}
+%%
+%%==========================================================================================
+
+
+%%
+%%==========================================================================================
+
+
+\section{Data Set Preprocessing}
+
+
+%%==========================================================================================
+%%
+\begin{slide}{Preprocessing Of Project Data Sets}
+%Related Work - Outlying Aspects Mining
+\begin{itemize}
+  \item Data Collection 
+  \\Download dataset from the kaggle project.
+  \end{itemize}
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{logos/data1.eps}
+      \vspace{0.4em}
+      %\caption{Download dataset display from kaggle}
+    \end{minipage}
+  \end{figure}
+\bigskip
+
+
+
+
+
+%%==========================================================================================
+\begin{note}
+Let me introduce two existing methods:
+Feature selection and score-and-search.
+
+For feature selection,
+the query point can be regarded as positive class and
+the rest of the data can be regarded as negative class,
+selected the features that best distinguish the two classes.
+
+The advantages of this method are easy to operate,
+and it's able to resolve dimensionality bias.
+However, it has some drawbacks.
+Firstly,
+positive and negative classes are Not balanced,
+secondly,
+it can't quantify the outlying degree correctly.
+Most importantly,
+it doesn't identify group outlying aspects.
+\end{note}
+%%==========================================================================================
+
+\end{slide}
+%%
+%%==========================================================================================
+
+%%
+%%==========================================================================================
+% \begin{slide}{Feature Item}
+% By making a comprehensive analysis of the nine
+% characteristic items in the data set mentioned 
+% above,we can reach the following conclusions:
+
+
+% \bigskip
+
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=1\textwidth]{kaggle/1.eps}
+%   \caption{}
+% \end{figure}
+% \setlength{\parindent}{2em}The data range was from 1/1/2003 to 5/13/2015, and 
+% a data training set containing nine feature items and 87,8049 
+% samples was created.
+% \end{slide}
+
+%%
+%%==========================================================================================
+% \begin{slide}{Features Item}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=1\textwidth]{kaggle/2.eps}
+%   \end{figure}
+  
+%   \bigskip
+% More specifically it includes the following variables.
+%   \begin{itemize}
+%     \item Date - timestamp of the crime Incident.
+%     \item Category - category of the crime incident. (This is our target variable.)
+%     \item Descript - detailed description of the crime incident
+%     \item DayOfWeek - the day of the week
+%     \item PdDistrict - the name of the Police Department District
+%     \item Resolution - The resolution of the crime incident
+
+%   \end{itemize}
+% \end{slide}
+%%
+%%==================================================================
+
+
+
+% \begin{slide}{Features Item}
+%   \begin{itemize}
+%     \item Address - the approximate street address of the crime incident
+%     \item X - Longitude
+%     \item Y - Latitude
+%   \end{itemize}
+% \end{slide}
+
+%%==========================================================================================
+
+\section{Data Cleaning}
+
+%%==========================================================================================
+%%
+
+%%
+%%===========================================================================================
+
+
+
+%%
+%%=============================================================================================
+\begin{slide}[toc=,bm=]{Training Set Data Cleaning}
+\begin{itemize}
+\item Use a scatter plot to observe the distribution of commodity prices and daily sales.
+\item Filter for anomalies and apparent outliers
+\end{itemize}
+% \begin{figure}[htbp]
+%   \centering
+%   \begin{minipage}[t]{0.28\textwidth}
+%     \centering
+%     \centerline{\includegraphics[width=1.5\textwidth]{logos/filter.eps}}
+%     \vspace{0.4em}
+%     %\caption{Download dataset display from kaggle}
+%   \end{minipage}
+% \end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{logos/filter1.eps}
+    \vspace{0.4em}
+    \caption{Distribution}
+  \end{minipage}
+  \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{logos/3.2.2.eps}
+    \vspace{0.4em}
+    \caption{Filter Abnormal}
+  \end{minipage}
+\end{figure}
+
+
+%%==========================================================================================
+\begin{note}
+In conclusion,
+we firstly formalized the problem of
+group outlying aspects mining,
+
+Then proposed a novel method GOAM algorithm to address the problem of
+group outlying aspects mining,
+and the proposed method use pruning to reduce time complexity
+while identifying the suitable set of outlying features for the interested group.
+
+Thank you and any question?
+\end{note}
+%%==========================================================================================
+
+\end{slide}
+%%
+%%==========================================================================================
+
+% \begin{slide}{Feature Analysis}
+%   There are also some wrong locations in the data set. After analysis, we 
+%   found a total of 67 wrong messages, which also means that we cannot use
+%    these 67 wrong messages.
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=1\textwidth]{kaggle/6.1.eps}
+%   \end{figure}
+
+
+% \end{slide}
+%%
+%%===========================================================================================
+
+
+
+%%
+%%========================================================================
+
+% \begin{slide}{Dates \& Day of the week}
+%   These variables are distributed uniformly between 1/1/2003 to 5/13/2015 (and Monday to Sunday) and split between the training and the testing dataset as mentioned before. We did not notice any anomalies on these variables.
+%   The median frequency of incidents is 389 per day with a standard deviation of 48.51.
+%   Also, there is no significant deviation of incidents frequency 
+%   throughout the week. Thus we do not expect this variable to play a 
+%   significant role in the prediction.
+
+
+%   \begin{figure}[htbp]
+%     \centering
+%     \begin{minipage}[t]{0.48\textwidth}
+%       \centering
+%       \includegraphics[width=0.8\textwidth]{kaggle/7.1.eps}
+%       \vspace{0.4em}
+%       \caption{Dates and Day of the Week}
+%     \end{minipage}
+%     \begin{minipage}[t]{0.48\textwidth}
+%       \centering
+%       \includegraphics[width=0.8\textwidth]{kaggle/8.1.eps}
+%       \vspace{0.4em}
+%       \caption{Per Weekday}
+%     \end{minipage}
+%   \end{figure}
+% \end{slide}
+
+%%
+%%%%===============================================================
+
+%%
+%%===================================================================
+
+
+
+% \begin{slide}{Category \& Police District}
+%   There are 39 discrete categories that the police department file the incidents with the most common being 
+%   Larceny/Theft (19.91\%), Non/Criminal (10.50\%), and Assault(8.77\%).
+%   There are significant differences between the different districts of the City with the Southern district 
+%   having the most incidents (17.87\%) followed by Mission (13.67\%) and Northern (12.00\%).
+%   \begin{figure}[htbp]
+%     \centering
+%     \begin{minipage}[t]{0.48\textwidth}
+%       \centering
+%       \includegraphics[width=0.7\textwidth]{kaggle/9.eps}
+%       \vspace{0.4em}
+%       \caption{Category}
+%     \end{minipage}
+%     \begin{minipage}[t]{0.48\textwidth}
+%       \centering
+%       \includegraphics[width=0.7\textwidth]{kaggle/10.eps}
+%       \vspace{0.4em}
+%       \caption{Police District}
+%     \end{minipage}
+%   \end{figure}
+% \end{slide}
+
+%%
+%%=========================================================================
+
+%%
+%%==========================================================================
+
+
+% \begin{slide}{}
+%   \begin{itemize}
+%   \item Address
+% Address, as a text field, requires advanced techniques to use 
+% it for the prediction. Instead in this project, we will use it to 
+% extract if the incident has happened on the road or in a building block.
+% \item X - Longitude Y - Latitude
+% We have tested that the coordinates belong inside the
+%  boundaries of the city. Although longitude does not contain any
+%   outliers, latitude includes some 90o values which correspond to the North Pole.
+% \end{itemize}
+% \end{slide}
+
+%%
+%%==============================================================================
+
+\section{Structured Data And Analysis} 
+
+%%===========================================================================================
+%%
+
+%%
+%%========================================================================================
+
+\begin{slide}{Sales Analysis}
+  Then, we created additional features. More specifically:
+\begin{itemize}
+  \item  Sales analysis\\
+  Overall sales were down, and monthly sales were mostly down year on year.
+One item sold exceptionally well.
+  % \item From the ‘Dates’ field, we extracted the Day, the Month, the
+  %  Year, the Hour, the Minute, the Weekday, and the number of days 
+  %  since the first day in the data.
+
+  % \item From the ‘Address’ field we extracted if the incident has taken
+  %  place in a crossroad or on a building block.
+\end{itemize}
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[t]{0.28\textwidth}
+    \centering
+    \centerline{\includegraphics[width=3\textwidth]{logos/sale.eps}}
+    \vspace{-1.0em}
+    %\caption{Sales Analysis}
+  \end{minipage}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{kaggle/14.eps}
+\end{figure}
+
+\end{slide}
+
+\begin{slide}{Sales Analysis}
+  
+  \begin{itemize}
+  \item  Average number of items sold in the month\\
+    In 2013 and 2014, the average monthly sales volume of goods under sale was basically 13-16,
+    while in 2015, the average monthly sales volume of goods under sale decreased to 12-14.
+\end{itemize}
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[t]{0.28\textwidth}
+    \centering
+    \centerline{\includegraphics[width=3\textwidth]{logos/aveitem.eps}}
+    \vspace{-1.0em}
+    %\caption{Sales Analysis}
+  \end{minipage}
+\end{figure}
+\end{slide}
+%%
+%%==================================================================================
+
+\section{Profit  Analysis}
+
+%%
+%%============================================================================================
+
+%%
+%%==============================================================================================
+\begin{slide}{Profit  Analysis}
+  \begin{itemize}
+    \item  turnover analysis
+  %\item  Display of test data
+  \end{itemize}
+  
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.28\textwidth}
+      \centering
+      \centerline{\includegraphics[width=3\textwidth]{logos/turnover.eps}}
+      \vspace{-1.0em}
+      %\caption{precdtion}
+    \end{minipage}
+  \end{figure}
+\end{slide}
+
+\begin{slide}{Profit  Analysis}
+  \begin{itemize}
+    \item The highest-grossing commodity\\
+    The number one item in total revenue accounts for a percentage of monthly revenue
+  %\item  Display of test data
+  \end{itemize}
+  
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.28\textwidth}
+      \centering
+      \centerline{\includegraphics[width=3\textwidth]{logos/highcom.eps}}
+      \vspace{-1.0em}
+      %\caption{precdtion}
+    \end{minipage}
+  \end{figure}
+\end{slide}
+
+%%
+%%==============================================================================
+\section{Predict Future Trend}
+\begin{slide}{Working With Training Set}
+\begin{itemize}
+  \item Handle closed stores and discontinued goods.
+  \item Only keep the goods that are normally operated in the last 6 months 
+  and the goods with sale volume.
+  % \item From the ‘Dates’ field, we extracted the Day, the Month, the
+  %  Year, the Hour, the Minute, the Weekday, and the number of days 
+  %  since the first day in the data.
+
+  % \item From the ‘Address’ field we extracted if the incident has taken
+  %  place in a crossroad or on a building block.
+\end{itemize}
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.88\textwidth]{logos/close.eps}
+    \vspace{0.4em}
+    \caption{Closed Stores}
+  \end{minipage}
+  \begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.88\textwidth]{logos/normal.eps}
+    \vspace{0.4em}
+    \caption{Normal Opreation}
+  \end{minipage}
+\end{figure}
+
+\end{slide}
+
+\begin{slide}{Characteristics Of  The Processing}
+  \begin{itemize}
+    \item use historical sales data to predict future sales.\\
+    Using the historical sales data as the characteristics of the model, \\
+    this month's sales results as labels to build a model for regression analysis.
+    % \item From the ‘Dates’ field, we extracted the Day, the Month, the
+    %  Year, the Hour, the Minute, the Weekday, and the number of days 
+    %  since the first day in the data.
+  
+    % \item From the ‘Address’ field we extracted if the incident has taken
+    %  place in a crossroad or on a building block.
+  \end{itemize}
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+      \centering
+      \centerline{\includegraphics[width=0.88\textwidth]{logos/tezheng.eps}}
+      \vspace{-1.0em}
+      \caption{Fusion Feature}
+    \end{minipage}
+    % \begin{minipage}[t]{0.48\textwidth}
+    %   \centering
+    %   \includegraphics[width=0.88\textwidth]{logos/normal.eps}
+    %   \vspace{0.4em}
+    %   \caption{Normal Opreation}
+    % \end{minipage}
+  \end{figure}
+  \end{slide}
+
+
+
+
+\section{Model Adopted}
+
+%%
+%%============================================================================================
+
+%%
+%%==============================================================================================
+\begin{slide}{LightGBM Model}
+  This project uses lightGBM model for training.\\
+  LightGBM is a fast, distributed, high-performance gradient enhancement framework
+   based on decision tree algorithms.It supports category characteristics. \\
+   LightGBM supports category characteristics directly and natively by changing the decision rules
+  of the decision tree algorithm, without transformation.
+  \begin{figure}[htbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+      \centering
+      \centerline{\includegraphics[width=0.88\textwidth]{logos/moxing.eps}}
+      \vspace{-1.0em}
+      \caption{Feature Parallelization}
+    \end{minipage}
+    % \begin{minipage}[t]{0.48\textwidth}
+    %   \centering
+    %   \includegraphics[width=0.88\textwidth]{logos/normal.eps}
+    %   \vspace{0.4em}
+    %   \caption{Normal Opreation}
+    % \end{minipage}
+  \end{figure}
+\end{slide}
+
+%%
+%%===============================================================================================
+
+
+\section{Summary}
+
+\begin{slide}{Project Summary}
+  From data analysis methods to feature engineering and prediction model construction,
+  a lot of time has been spent to study and comb.\\Through this project, I have learned a lot, 
+  including the effective aspects of problem cutting, code implementation of analysis algorithm, 
+  design of analysis process, etc.\\ which enables me to better grasp the thinking of data analysis on the whole.\\
+  In the process of predictive analysis, the theoretical and data support for feature analysis and model construction 
+  is not concise and powerful enough,which needs to be strengthened.
+\end{slide}
+%%==========================================================================================
+%%
+
+
+% \section{Ideas Improvement}
+
+% TODO: Contact Page
+
+\end{document}
+
+\endinput

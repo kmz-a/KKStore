@@ -1,0 +1,77 @@
+\documentclass{amsart}
+\synctex=1
+
+%=================================================================
+% 
+\newcount\DraftStatus  % 0 suppresses notes to selves in text
+\DraftStatus=1   % TODO: set to 0 for final version
+%=================================================================
+
+%=================================================================
+\usepackage{comment}
+%=================================================================
+%
+\includecomment{JournalOnly}  
+\includecomment{ConferenceOnly}  
+\includecomment{TulipStyle}
+%
+%=================================================================
+\input{preamble}
+
+
+%=================================================================
+%
+\begin{document}
+%
+%=================================================================
+%
+\title[A Short Running Title]{Predict Future Sales}%
+
+\author{MingZhu Kang}
+\address[A.~1]{School of Computer Science,\\ 
+Xi'an Shiyou University, Shaanxi 710065, China}%
+\email[A.~1]{xxx@tulip.academy}
+
+
+%\thanks{Thanks to \ldots}%
+\subjclass{Artificial Intelligence}%
+\keywords{Deep learning, store, sale}%
+\date{\gitAuthorDate}%
+
+\begin{abstract}
+    Under the vigorous development of new retail trade, 
+    accurate forecast of merchandise sales can effectively guide stores
+    to carry out reasonable inventory management.
+    Sales forecasting technology is the key to market competition in the convenience industry.
+    The wide distribution of convenience store chains in the region, the variety of goods,  
+    the market demand is difficult to predict, 
+    all these factors increase the difficulty to forecast the sales volume of goods.
+    \\In order to improve the accuracy of commodity sales forecast,
+    this project is based on machine learning and deep learning theories, 
+    takes the historical sales data set of convenience stores as the research object,
+    conducts data preprocessing, feature extraction and other operations, 
+    and uses the model to train the data set to predict the future sales of stores.
+    \\
+    Keywords: Deep learning, store, sale
+\end{abstract}
+
+\maketitle
+\tableofcontents
+
+\newpage
+%=================================================================
+
+\input{mainbody}
+
+% ----------------------------------------------------------------
+\newpage
+\bibliography{tuliplab,yourbib}
+% TODO: you should change this yourbib into a proper bib file name
+
+\bibliographystyle{plainnat}
+%=================================================================
+
+\listoftodos
+
+\end{document}
+
