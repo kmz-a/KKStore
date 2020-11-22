@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=latex 2020.11.20)  21 NOV 2020 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=latex 2020.11.20)  22 NOV 2020 12:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,11 +1321,11 @@ Package: gitinfo2 2015/11/22 v2.0.7 git revision information
  (e:/llatex/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 )
-
-Package gitinfo2 Warning: I can't find the file '.git/gitHeadInfo.gin'.
-(gitinfo2)                All git metadata has been set to '(None)'.
-
-) (e:/llatex/texlive/2020/texmf-dist/tex/latex/units/nicefrac.sty
+Package gitinfo2 Info: gitinfo2 found : ../.git/gitHeadInfo.gin
+(gitinfo2)              on input line 128.
+ (../.git/gitHeadInfo.gin) (e:/llatex/texlive/2020/texmf-dist/tex/latex/gitinfo2/gitexinfo.sty
+Package: gitexinfo 2015/11/22 v2.0.7 Auxiliary package for gitinfo2
+)) (e:/llatex/texlive/2020/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip98
 \L@UnitsRaiseTextstyle=\skip99
@@ -1798,12 +1798,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 808.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
  ) 
 Here is how much of TeX's memory you used:
- 47350 strings out of 480609
- 1033417 string characters out of 5904124
- 1584337 words of memory out of 5000000
- 62215 multiletter control sequences out of 15000+600000
+ 47393 strings out of 480609
+ 1034153 string characters out of 5904124
+ 1585895 words of memory out of 5000000
+ 62257 multiletter control sequences out of 15000+600000
  559965 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,9n,98p,2383b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on "slideskknew - 副本.dvi" (18 pages, 259788 bytes).
+Output written on "slideskknew - 副本.dvi" (18 pages, 259888 bytes).
