@@ -607,7 +607,10 @@ Thank you and any question?
   \begin{itemize}
   \item  
     The word bag model learns vocabulary from all documents and then models each document
-    by counting the number of occurrences of each
+    by counting the number of occurrences of each word.
+    \\The corpus is used to construct the word bag model, 
+    \\and the constructed word bag model is used to carry out feature engineering 
+    \\for each word in the training set and the verification set and turn it into a vector
   \end{itemize}
 % \begin{figure}[htbp]
 %   \centering
@@ -692,7 +695,7 @@ Thank you and any question?
 \section{Predict Test Set Data}
 \begin{slide}{Predict Test Set Data}
 \begin{itemize}
-  \item 
+ \item 
   The text in the test set was predicted using the LG_FINAL logistic regression classifier, 
 \\the predicted results were viewed, the test results were added to the test set, 
  each film comment in the test set was tagged, and submitted in the phrase ID-emotion tag format.
